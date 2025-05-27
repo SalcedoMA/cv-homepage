@@ -96,7 +96,7 @@ section {
     }
 
     .main-picture img{
-        max-width: 95vw;
+        max-width: 90vw;
     }
 
     .name {
@@ -109,6 +109,7 @@ section {
         align-items: center;
         line-height: 3rem;
         box-shadow: none;
+        background: none;
     }
 
     .personal-info .description {
@@ -178,6 +179,11 @@ section {
     text-wrap: wrap;
 }
 
+.project-info .description .p {
+    overflow-x: hidden;
+    text-overflow: clip;
+}
+
 .project-info .icons {
     grid-area: card-icons;
     justify-self: end;
@@ -226,6 +232,8 @@ section {
 .contact-info .information .phone-number, .contact-info .information .email, .contact-info .information .icons {
     display: flex;
     gap: 0.35rem;
+    flex-wrap: wrap;
+
 }
 
 .contact-info .information .icons img {
@@ -254,6 +262,10 @@ section {
         width: 100%;
         padding: 3rem 2rem;
         flex-direction: column;
+    }
+
+    .contact-info .information .title {
+        font-size: 4.25rem;
     }
 
     .secondary-picture img{
