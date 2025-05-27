@@ -24,21 +24,20 @@ section {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
-/* body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
-
 /* ABOUT ME SECTION */
 .about-me {
     background-color: var(--main-color);
     display: flex;
     justify-content: center;
-    /* gap: 2rem; */
+    flex-wrap: wrap;
     padding: 7rem 0;
     align-items: center;
-    background-image: linear-gradient(176deg, var(--main-color) 70%, var(--secondary-color ) calc(70% + 2px))
+    background-image: linear-gradient(176deg, var(--main-color) 70%, var(--secondary-color ) calc(70% + 2px));
+}
+
+.main-picture {
+    position: relative;
+    /* transform: rotate(45deg); */
 }
 
 .main-picture img {
@@ -48,6 +47,16 @@ section {
     height: auto;
     width: 700px;
     object-fit: cover;
+    /* transform: translate(40px, -40px); */
+}
+
+.name {
+    color: #FFF;
+    transform: translateY(-100%);
+    position: absolute;
+    z-index: 3;
+    padding-left: 1rem;
+    font-size: 6.25rem;
 }
 
 .personal-info {
@@ -57,8 +66,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    box-shadow: 5px 5px  30px rgba(29, 29, 29, 0.3);
-    
+    box-shadow: 5px 5px  30px rgba(29, 29, 29, 0.3);   
 }
 
 .personal-info .icons{
@@ -72,13 +80,55 @@ section {
     height: 50px;
 }
 
+@media (max-width: 600px) {
+
+    .about-me {
+        padding-top: 3rem;
+        /* padding-bottom: 0; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(-45deg, var(--secondary-color) 67%, var(--main-color ) calc(67% + 2px));
+    }
+
+    .main-picture {
+        margin-bottom: 3rem;
+    }
+
+    .main-picture img{
+        max-width: 95vw;
+    }
+
+    .name {
+        line-height: 5rem;
+        font-size: 5rem;
+    }
+
+    .personal-info {
+        padding: 3rem 2rem 0 2rem;
+        align-items: center;
+        line-height: 3rem;
+        box-shadow: none;
+    }
+
+    .personal-info .description {
+        color: rgb(53, 53, 53);
+    }
+
+    .personal-info .icons{
+        padding: 1rem 0 0 0;
+        display: flex;
+        justify-content: end;
+        gap: 1rem;
+    }
+}
+
 /* MY WORK SECTION */
 
 .my-work {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    /* align-items: center; */
     padding: 2rem 10rem 6rem 10rem;
     
 }
@@ -96,7 +146,6 @@ section {
 .project-card {
     box-shadow: 5px 5px  30px rgba(29, 29, 29, 0.3);
     border-radius: 3px;
-    /* background-color: aqua; */
 }
 
 .project-image {
@@ -134,11 +183,23 @@ section {
     justify-self: end;
 }
 
+@media (max-width: 600px) {
+
+    .my-work {
+        padding: 3rem 2rem;
+    }
+
+    .projects {
+        gap: 1.3rem;
+    }
+}
+
 /* CONTACT INFO SECTION */
 .contact-info {
-    padding: 7rem 0;
+    padding: 7rem 2rem;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
     background-color: var(--main-color);
 }
@@ -147,6 +208,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding-bottom: 3rem;
 }
 
 .contact-info .information .title {
@@ -164,7 +226,6 @@ section {
 .contact-info .information .phone-number, .contact-info .information .email, .contact-info .information .icons {
     display: flex;
     gap: 0.35rem;
-    /* filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(66deg) brightness(103%) contrast(102%); */
 }
 
 .contact-info .information .icons img {
@@ -180,4 +241,22 @@ section {
     object-fit: cover;
     box-shadow: 5px 5px  30px rgba(29, 29, 29, 0.3);
     border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+    .contact-info {
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .contact-info .information {
+        width: 100%;
+        padding: 3rem 2rem;
+        flex-direction: column;
+    }
+
+    .secondary-picture img{
+        width: 100%;
+    }
 }
